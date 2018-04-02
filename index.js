@@ -1,12 +1,12 @@
+//HEROKU app
+//https://agile-mesa-61866.herokuapp.com/ | https://git.heroku.com/agile-mesa-61866.git
+
 const express = require('express');
+require('./services/passport');
+
 const app = express();
 
-app.get('/', (req, res) => {
-  res.send({ hi: 'there Oliver buddy!' });
-});
+require('./routes/authRoutes')(app);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT);
-
-//HEROKU app
-//https://agile-mesa-61866.herokuapp.com/ | https://git.heroku.com/agile-mesa-61866.git
